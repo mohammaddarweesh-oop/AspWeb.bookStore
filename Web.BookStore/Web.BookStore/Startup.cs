@@ -26,30 +26,38 @@ namespace Web.BookStore
                 app.UseDeveloperExceptionPage();
             }
 
-            app.Use(async (context , next) => {
-                await context.Response.WriteAsync("Welcome in my website first midleware");
-                await next();
-            } );
+            //app.Use(async (context , next) => {
+            //    await context.Response.WriteAsync("Welcome in my website first midleware");
+            //    await next();
+            //} );
 
-            app.Use(async (context , next) => {
-                await context.Response.WriteAsync("\nSecond midleware ");
-                await next();
-                await context.Response.WriteAsync("\nThird midleware ");
+            //app.Use(async (context , next) => {
+            //    await context.Response.WriteAsync("\nSecond midleware ");
+            //    await next();
+            //    await context.Response.WriteAsync("\nThird midleware ");
                 
-            });
+            //});
 
-            app.Use(async (context , next) => {
-                await context.Response.WriteAsync("\nFourth midleware");
-                await next();
-            });
+            //app.Use(async (context , next) => {
+            //    await context.Response.WriteAsync("\nFourth midleware");
+            //    await next();
+            //});
 
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
+                endpoints.Map("/", async context =>
                 {
                     await context.Response.WriteAsync("\nHello World!");
+                });
+            });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.Map("/House", async context =>
+                {
+                    await context.Response.WriteAsync("\nHello House ...!");
                 });
             });
         }
