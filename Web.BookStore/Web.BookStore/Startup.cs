@@ -27,18 +27,31 @@ namespace Web.BookStore
             }
 
             app.Use(async (context , next) => {
-                await context.Response.WriteAsync("Welcome in my website");
+                await context.Response.WriteAsync("Welcome in my website first midleware");
+                await next();
             } );
 
-            //app.UseRouting();
+            app.Use(async (context , next) => {
+                await context.Response.WriteAsync("\nSecond midleware ");
+                await next();
+                await context.Response.WriteAsync("\nThird midleware ");
+                
+            });
 
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapGet("/", async context =>
-            //    {
-            //        await context.Response.WriteAsync("Hello World!");
-            //    });
-            //});
+            app.Use(async (context , next) => {
+                await context.Response.WriteAsync("\nFourth midleware");
+                await next();
+            });
+
+            app.UseRouting();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapGet("/", async context =>
+                {
+                    await context.Response.WriteAsync("\nHello World!");
+                });
+            });
         }
     }
 }
