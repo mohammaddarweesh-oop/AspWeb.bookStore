@@ -16,6 +16,7 @@ namespace Web.BookStore
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,27 +48,10 @@ namespace Web.BookStore
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.Map("/", async context =>
-                {
-                    if ((bool) env.IsEnvironment("Development"))
-                    {
-                        await context.Response.WriteAsync("Hello in Dev");
-                    }
-                    else
-                        await context.Response.WriteAsync(env.EnvironmentName);
-                    
-                    
-                });
+                endpoints.MapDefaultControllerRoute();
             });
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.Map("/House", async context =>
-                {
-                    
-                    await context.Response.WriteAsync("\nHello House ...!");
-                });
-            });
+            
         }
     }
 }
