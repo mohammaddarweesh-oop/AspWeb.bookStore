@@ -13,6 +13,8 @@ namespace Web.BookStore
     {
         public static void Main(string[] args)
         {
+            //string[] cars = new string[4] { "Volvo", "BMW", "Ford", "Mazda" };
+            //Console.WriteLine(cars[0]);
             CreateHostBuilder(args).Build().Run();
         }
 
