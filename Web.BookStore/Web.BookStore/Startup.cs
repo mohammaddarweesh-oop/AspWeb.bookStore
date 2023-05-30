@@ -49,21 +49,13 @@ namespace Web.BookStore
             {
                 endpoints.Map("/", async context =>
                 {
-                    if ((bool) env.IsDevelopment)
+                    if ((bool) env.IsEnvironment("Development"))
                     {
                         await context.Response.WriteAsync("Hello in Dev");
                     }
-                    else if ( (bool) env.IsProduction)
-                    {
-                        await context.Response.WriteAsync("Hello in Prod");
-                    }else if (Convert.ToBoolean(env.IsStaging))
-                    {
-                        await context.Response.WriteAsync("Hello in Staging");
-                    }
                     else
-                    {
                         await context.Response.WriteAsync(env.EnvironmentName);
-                    }
+                    
                     
                 });
             });
