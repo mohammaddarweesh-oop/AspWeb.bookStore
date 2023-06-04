@@ -33,7 +33,7 @@ namespace Web.BookStore.Controllers
         //searchbook?bookName=Algo&author=Mohammad
         public List<BookModel> SearchBook(string bookName , string author)
         {
-            return _BookRepository.SearchBook(bookName, author);
+            return _BookRepository.SearchBook(bookName, author); 
         }
 
 
