@@ -9,9 +9,13 @@ namespace Web.BookStore.Controllers
     //                          : = inheretance
     public class HomeController : Controller
     {
-        public string Index()
+        public ViewResult Index()
         {
-            return "Home Page";
+            return View();
+        }
+        public ViewResult AboutUS()
+        {
+            return View();
         }
     }
 }

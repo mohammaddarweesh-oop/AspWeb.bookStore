@@ -3,25 +3,37 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Web.BookStore.Models;
+using Web.BookStore.Repository;
 
 namespace Web.BookStore.Controllers
 {
     public class BookController : Controller
     {
-        // book/getAllBook
-        public string GetAllBook()
+
+        private readonly BookRepository _BookRepository = null;
+
+        public BookController()
         {
-            return "Get All Book !";
+            _BookRepository = new BookRepository();
+        }
+        
+        // book/getAllBook
+        public List<BookModel> GetAllBook()
+        {
+            return _BookRepository.GetAllBook();
         }
         // book/getbook/5
-        public string GetBook(int id)
+        public BookModel GetBook(int id)
         {
-            return $"Book with id={id}";
+            return _BookRepository.GetBookById(id);
         }
         //searchbook?bookName=Algo&author=Mohammad
-        public string SearchBook(string bookName , string author)
+        public List<BookModel> SearchBook(string bookName , string author)
         {
-            return $"Book with Book name = {bookName} & Autor={author} ";
+            return _BookRepository.SearchBook(bookName, author);
         }
+
+
     }
 }
