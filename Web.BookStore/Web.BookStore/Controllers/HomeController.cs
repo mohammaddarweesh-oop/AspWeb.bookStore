@@ -9,10 +9,18 @@ namespace Web.BookStore.Controllers
     //                          : = inheretance
     public class HomeController : Controller
     {
+        //[HttpGet("Index")]
         public ViewResult Index()
         {
-            return View();
+            //return View("~/TempView/Temp.cshtml");
+            return View("../../TempView/Temp");
         }
+
+        //[HttpPost("Index")]
+        //public ViewResult Index2()
+        //{
+        //    return View();
+        //}
 
         public ViewResult AboutUS()
         {

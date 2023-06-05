@@ -127,3 +127,5 @@ E:\ASP\BookStore\AspWeb.bookStore\Web.BookStore\Web.BookStore\obj\Debug\netcorea
 E:\ASP\BookStore\AspWeb.bookStore\Web.BookStore\Web.BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Home\AboutUS.cshtml.g.cs
 E:\ASP\BookStore\AspWeb.bookStore\Web.BookStore\Web.BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Book\GetAllBook.cshtml.g.cs
 E:\ASP\BookStore\AspWeb.bookStore\Web.BookStore\Web.BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
+E:\ASP\BookStore\AspWeb.bookStore\Web.BookStore\Web.BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Contact.cshtml.g.cs
+E:\ASP\BookStore\AspWeb.bookStore\Web.BookStore\Web.BookStore\obj\Debug\netcoreapp3.1\Razor\TempView\Temp.cshtml.g.cs
