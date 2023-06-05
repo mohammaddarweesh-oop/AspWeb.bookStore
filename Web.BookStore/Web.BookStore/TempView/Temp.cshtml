@@ -18,7 +18,7 @@
         @{
             for (int i = 1; i <= 100; i++)
             {
-                <option value="@i">Option @i @(5+9) mohammad@gmail.com</option>
+                <option value="@i">Option @i @(5+9) mohammad@gmail.com @@A</option>
                 //i += 5;
             }
         }
@@ -33,6 +33,53 @@
         sheets containing Lorem Ipsum passages, and more recently with desktop
         publishing software like Aldus PageMaker including versions of Lorem Ipsum.
     </p>
+
+    @{ 
+        int num = 20;
+        int a = 4;
+    }
+
+    @if (num > 10)
+    {
+        num++;
+        <div>Google Map</div>
+    }
+    else 
+    { 
+        <p>Google Load</p>
+    }
+    <h1>Tarnary - @(num == 20? num = 50: num = 5)</h1>
+    <h1> Value Of @num</h1>
+    @switch (a)
+    {
+        case 1: 
+            <h1>I am 1</h1>
+            break;
+        case 2: 
+            <h1>I am 2</h1>
+            break;
+        case 3: 
+            <h1>I am 3</h1>
+            break;
+        case 4: 
+            <h1>I am 4</h1>
+            break;
+        default :
+            <h1>I am default</h1>
+            break;
+    }
+    
+    @* ==================================================== *@
+
+    @{ 
+        var item = new List<int>() { 1, 2, 3, 4 };
+
+
+}
+    @foreach (var items in item) 
+    {
+        <h2>@items</h2>
+    }
 
 </body>
 </html>
